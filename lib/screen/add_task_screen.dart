@@ -11,7 +11,7 @@ class AddTaskScreen extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(
           horizontal: 30.0,
-          vertical: 20.0,
+          vertical: 10.0,
         ),
         decoration: const BoxDecoration(
           color: Colors.white,
@@ -40,12 +40,12 @@ class AddTaskScreen extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             const SizedBox(
-              height: 20.0,
+              height: 10.0,
             ),
             TextButton(
               style: TextButton.styleFrom(
                 backgroundColor: Colors.lightBlueAccent,
-                padding: const EdgeInsets.all(15.0),
+                padding: const EdgeInsets.all(12.0),
               ),
               child: const Text(
                 'Add',
