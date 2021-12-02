@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todoey/widgets/task_list_view.dart';
 
 class TaskScreen extends StatelessWidget {
   const TaskScreen({Key? key}) : super(key: key);
@@ -7,6 +8,7 @@ class TaskScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
+        splashColor: Colors.blueAccent,
         backgroundColor: Colors.lightBlueAccent,
         onPressed: () {},
         child: const Icon(
@@ -68,6 +70,7 @@ class TaskScreen extends StatelessWidget {
                   topRight: Radius.circular(20.0),
                 ),
               ),
+              child: const TaskListView(),
             ),
           ),
         ],
