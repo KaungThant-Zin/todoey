@@ -9,7 +9,6 @@ class TaskScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        splashColor: Colors.blueAccent,
         backgroundColor: Colors.lightBlueAccent,
         onPressed: () {
           showModalBottomSheet(
