@@ -1,24 +1,16 @@
 import 'package:flutter/material.dart';
 
-class TaskListTile extends StatefulWidget {
-  const TaskListTile({
-    Key? key,
-  }) : super(key: key);
+class TaskListTile extends StatelessWidget {
+  final bool isChecked;
+  final String taskTitle;
+  final ValueChanged<void> onChecked;
 
-  @override
-  State<TaskListTile> createState() => _TaskListTileState();
-}
-
-class _TaskListTileState extends State<TaskListTile> {
-  bool isChecked = false;
-
-  void checkBoxCallBack(bool? checkBoxState) {
-    if (checkBoxState != null) {
-      setState(() {
-        isChecked = checkBoxState;
-      });
-    }
-  }
+  const TaskListTile(
+      {Key? key,
+      required this.isChecked,
+      required this.taskTitle,
+      required this.onChecked})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,32 +19,50 @@ class _TaskListTileState extends State<TaskListTile> {
         horizontal: 40.0,
       ),
       title: Text(
-        'this is a task',
+        taskTitle,
         style: TextStyle(
           decoration:
               isChecked ? TextDecoration.lineThrough : TextDecoration.none,
         ),
       ),
-      trailing: CheckboxState(
-        onChecked: checkBoxCallBack,
-        checkbox: isChecked,
+      trailing: Checkbox(
+        // onChanged: isChecked,
+        value: isChecked,
+        onChanged: onChecked,
       ),
     );
   }
 }
 
-class CheckboxState extends StatelessWidget {
-  final bool checkbox;
-  final ValueChanged<bool?> onChecked;
-  const CheckboxState(
-      {Key? key, required this.checkbox, required this.onChecked})
-      : super(key: key);
+// void checkBoxCallBack(bool? checkBoxState) {
+//   if (checkBoxState != null) {
+//     setState(() {
+//       isChecked = checkBoxState;
+//     });
+//   }
+// }
 
-  @override
-  Widget build(BuildContext context) {
-    return Checkbox(
-      onChanged: onChecked,
-      value: checkbox,
-    );
-  }
-}
+///////////////////////
+
+// CheckboxState(
+//         onChecked: checkBoxCallBack,
+//         checkbox: isChecked,
+//       ),
+
+///////////////////////////////
+
+// class CheckboxState extends StatelessWidget {
+//   final bool checkbox;
+//   final ValueChanged<bool?> onChecked;
+//   const CheckboxState(
+//       {Key? key, required this.checkbox, required this.onChecked})
+//       : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Checkbox(
+//       onChanged: onChecked,
+//       value: checkbox,
+//     );
+//   }
+// }
