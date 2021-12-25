@@ -4,17 +4,20 @@ class TaskListTile extends StatelessWidget {
   final bool isChecked;
   final String taskTitle;
   final ValueChanged<void> onChecked;
+  final Function() onLong;
 
-  const TaskListTile(
-      {Key? key,
-      required this.isChecked,
-      required this.taskTitle,
-      required this.onChecked})
-      : super(key: key);
+  const TaskListTile({
+    Key? key,
+    required this.isChecked,
+    required this.taskTitle,
+    required this.onChecked,
+    required this.onLong,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      onLongPress: onLong,
       contentPadding: const EdgeInsets.symmetric(
         horizontal: 40.0,
       ),

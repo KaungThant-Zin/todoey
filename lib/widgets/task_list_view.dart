@@ -26,9 +26,10 @@ class TaskListView extends StatelessWidget {
               isChecked: taskData.tasks[index].isDone,
               taskTitle: taskData.tasks[index].task,
               onChecked: (value) {
-                // setState(() {
-                //   taskData.tasks[index].toogleDone();
-                // });
+                taskData.updateTask(taskData.tasks[index]);
+              },
+              onLong: () {
+                taskData.deleteTask(taskData.tasks[index]);
               },
             );
           },

@@ -25,14 +25,7 @@ class _TaskScreenState extends State<TaskScreen> {
             backgroundColor: Colors.transparent,
             isScrollControlled: true,
             context: context,
-            builder: (context) => AddTaskScreen(
-              addTask: (newTaskTitle) {
-                // tasks.add(
-                //   Task(task: newTaskTitle, isDone: false),
-                // );
-                Navigator.pop(context);
-              },
-            ),
+            builder: (context) => AddTaskScreen(),
           );
         },
         child: const Icon(
