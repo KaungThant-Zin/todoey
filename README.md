@@ -2,6 +2,8 @@
 
 A new Flutter project.
 
+Long Press to delete
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
